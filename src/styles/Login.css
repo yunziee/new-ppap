@@ -1,0 +1,33 @@
+.login-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin-top: -40px;
+  }
+  
+  .login-form {
+    width: 100%;
+    max-width: 400px;
+    padding: 40px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+  }
+  
+  .login-options {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .login-options a {
+    color: #666666;
+    text-decoration: none;
+    margin: 0 10px;
+  }
+  
+  .login-options a:hover {
+    text-decoration: underline;
+  }
+  

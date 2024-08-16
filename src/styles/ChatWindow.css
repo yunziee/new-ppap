@@ -1,0 +1,56 @@
+.chat-window {
+    flex: 1;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    box-sizing: content-box;
+    font-family: 'pretendard-regular';
+    border:none;
+    height: calc(100vh - 150px); /* 입력창을 고려한 높이 설정 */
+    max-height: calc(100vh - 50px); /* 최대 높이 설정 */
+  }
+  
+  .message-list {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .message-bubble {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 10px 15px;
+    border-radius: 15px;
+    max-width: 70%;
+    font-size: 16px;
+  }
+  
+  .message-bubble.user {
+    background-color: rgb(240, 240, 240);
+    color: black;
+    align-self: flex-end;
+    margin-left: auto;
+    margin: 10px;
+  }
+  
+  .message-bubble.system {
+    color: black;
+    align-self: flex-start;
+    margin-right: auto;
+    margin: 10px;
+  }
+  
+  .message-content {
+    display: flex;
+    align-items: center;
+    max-width: 100%;
+    word-wrap: break-word;
+  }
+  
+  .message-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }

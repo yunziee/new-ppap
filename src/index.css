@@ -1,0 +1,29 @@
+@font-face {
+  font-family: "pretendard-light";
+  src: url("./assets/fonts/Pretendard-Light.otf");
+}
+
+@font-face {
+  font-family: "pretendard-regular";
+  src: url("./assets/fonts/Pretendard-Regular.otf");
+}
+
+@font-face {
+  font-family: "pretendard-semibold";
+  src: url("./assets/fonts/Pretendard-SemiBold.otf");
+}
+
+@font-face {
+  font-family: "pretendard-bold";
+  src: url("./assets/fonts/Pretendard-Bold.otf");
+}
+
+@font-face {
+  font-family: "pretendard-extrabold";
+  src: url("./assets/fonts/Pretendard-ExtraBold.otf");
+}
+
+@font-face {
+  font-family: "pretendard-black";
+  src: url("./assets/fonts/Pretendard-Black.otf");
+}

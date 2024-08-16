@@ -1,0 +1,24 @@
+.button {
+  width: 100%;
+  padding: 15px;
+  font-size: 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  text-align: center;
+  font-family: "pretendard-bold";
+}
+
+.button:hover {
+  opacity: 0.8;
+}
+
+.button-primary {
+  background-color: #007bff;
+  color: white;
+}
+
+.button-secondary {
+  background-color: #6c757d;
+  color: white;
+}

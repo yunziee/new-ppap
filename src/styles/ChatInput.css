@@ -1,0 +1,46 @@
+.chat-input {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    position: relative; /* 이미지를 절대 위치로 배치하기 위해 relative 설정 */
+    width: calc(100% - 40px); /* 입력창의 너비를 화면 크기에 맞춤 */
+    margin: 10px auto; /* 가운데 정렬 */
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 20px ; /* 오른쪽 padding을 조정하여 이미지 공간 확보 */
+    font-size: 15px;
+    font-family: "pretendard-regular";
+    background-color: #eeeeee;
+    border-radius: 25px;
+    border: 1px solid transparent; /* 기본 상태에서 테두리를 투명하게 설정 */
+}
+
+.chat-input input:focus,
+.chat-input input:active { /* 포커스 및 클릭(활성화) 상태에서 스타일 적용 */
+    border: 2px solid rgb(0, 123, 255);
+    outline: none;
+}
+
+.chat-input button {
+    position: absolute; /* 버튼을 입력창 내부에 배치하기 위해 absolute 설정 */
+    right: 35px; /* 입력창 오른쪽 끝에서 간격 설정 */
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.chat-input button img {
+    width: 30px; /* 전송 버튼의 아이콘 크기 설정 */
+    height: auto;
+}
+
+.chat-input button img:hover {
+    border-radius: 50%;
+    border: 1px solid #cccccc;
+}

@@ -1,0 +1,19 @@
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 85vh;
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 350px; /* 사이드바 너비만큼 오른쪽으로 밀기 */
+  }
+  
+  .sidebar.closed + .chat-container {
+    margin-left: auto; /* 사이드바가 닫힐 때, 왼쪽 마진을 자동으로 설정하여 가로 중앙 정렬 */
+  margin-right: auto; /* 오른쪽 마진도 자동으로 설정 */
+  }
+  

@@ -1,0 +1,71 @@
+.StartButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+  }
+  
+  .col {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .StartButton button {
+    cursor: pointer;
+    border: none;
+    border-radius: 10px;
+    padding: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 요소를 왼쪽으로 정렬 */
+    text-align: left;
+  }
+  
+  .chatButton {
+    width: 380px;
+    height: 120px;
+  }
+  
+  .actionButton {
+    width: 180px;
+    height: 120px;
+    flex-direction: column;
+    margin: 0 10px;
+    font-family: 'pretendard-bold';
+  }
+  
+  .chatButton img {
+    width: 80px;
+    height: auto;
+    margin-left: 10px;
+    flex-shrink: 0;
+  }
+  
+  .actionButton img {
+    width: 40px;
+    height: 40px;
+    margin-top: 10px; /* 버튼 내용물과 이미지 사이 간격 추가 */
+  }
+  
+  .startchat {
+    font-size: 22px;
+    font-family: 'pretendard-bold';
+    margin-bottom: 5px;
+  }
+  
+  .infotext {
+    font-size: 11px;
+    line-height: 1.2;
+    display: flex;
+    flex-direction: column; /* span 요소를 세로로 배열 */
+    font-family: "pretendard-light";
+  }
+  
+  .chatButton > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }

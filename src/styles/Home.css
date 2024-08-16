@@ -1,0 +1,102 @@
+
+/* Home 전체 레이아웃 */
+.Start {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #ffffff; /* 배경 색상 */
+  }
+  
+  /* 제목 섹션 */
+  .title {
+    text-align: center;
+    margin-top: -200px;
+    margin-bottom: 50px;
+    z-index: 1;
+  }
+  
+  .title h1 {
+    font-size: 48px;
+    color: #007bff;
+    margin-bottom: 20px;
+    font-family: 'pretendard-black';
+    -webkit-text-stroke: 0.5px #ffffff65;
+    
+  }
+  
+  .title p {
+    font-size: 18px;
+    color: #333333;
+    margin: 0;
+    font-family: 'pretendard-regular';
+    -webkit-text-stroke: 0.2px #ffffff65;
+  }
+  
+  /* 버튼 섹션 */
+  .startbox {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px; /* 버튼들 사이의 간격 */
+    margin-top: 20px;
+    z-index: 1;
+  }
+  
+  .startbox .chatButton {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 380px;
+    padding: 20px;
+    background-color: #f5f5f5; /* 버튼 배경 색상 */
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .startbox .actionButton {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 180px;
+    height: 120px;
+    padding: 15px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    margin: 0 10px;
+  }
+  
+  .startbox .actionButton:hover,
+  .startbox .chatButton:hover {
+    background-color: #eaeaea
+  }
+
+
+.background-image {
+    position: fixed; /* 이미지 고정 */
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: 0;
+  }
+  
+  /* 오른쪽 상단 이미지 */
+  .background-image.top-right {
+    top: 0;
+    right: 0;
+    width: 450px; /* 오른쪽 상단 이미지 크기 */
+    height: auto;
+    transform: translate(20%, -20%) rotate(90deg); /* 이미지가 화면 밖으로 살짝 벗어나도록 조정 */
+  }
+  
+  /* 왼쪽 하단 이미지 */
+  .background-image.bottom-left {
+    bottom: 0;
+    left: 0;
+    width: 500px; /* 왼쪽 하단 이미지 크기 */
+    height: auto;
+    transform: translate(-20%, 20%); /* 이미지가 화면 밖으로 살짝 벗어나도록 조정 */
+  }
