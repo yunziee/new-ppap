@@ -1,6 +1,6 @@
 import "../styles/InputField.css";
 
-const InputField = ({ type, placeholder, value, onChange }) => {
+const InputField = ({ type, placeholder, value, onChange, name }) => {
   return (
     <input
       type={type}
@@ -8,6 +8,7 @@ const InputField = ({ type, placeholder, value, onChange }) => {
       value={value}
       onChange={onChange}
       className="input-field"
+      name={name}
     />
   );
 };

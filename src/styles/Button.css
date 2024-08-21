@@ -18,7 +18,17 @@
   color: white;
 }
 
-.button-secondary {
-  background-color: #6c757d;
+.button-sidebar {
+  background-color: #ffffff76;
+  border: 1px solid #007bff;
+  color: #007bff;
+  margin: 5px;
+  border-radius: 25px;
+}
+
+.button-sidebar:hover {
+  background-color:#007bff;
   color: white;
 }
+
+
