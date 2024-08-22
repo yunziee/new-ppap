@@ -72,7 +72,7 @@ const Signup = () => {
     (e) => {
       e.preventDefault();
       if (validate()) {
-        setSuccess("회원가입에 성공했습니다!");
+        setSuccess("회원 가입에 성공했습니다!");
         // 서버에 회원가입 요청 로직은 여기에 추가됩니다.
         nav("/login"); // 성공 시 로그인 페이지로 이동
       }
@@ -168,7 +168,7 @@ const Signup = () => {
           text="가입하기"
           type="SQBL"
           className="button-primary"
-          onClick={handleSubmit} // submit 시 onClick이 필요 없을 경우 생략
+          onClick={handleSubmit}
         />
       </form>
     </div>

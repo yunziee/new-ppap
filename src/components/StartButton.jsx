@@ -14,7 +14,7 @@ const StartButton = () => {
           <div>
             <span className="startchat">채팅 시작하기</span>
             <div className="infotext">
-              <span>Chat GPT와의 대화를 통해</span>
+              <span>PPAP와의 대화를 통해</span>
               <span>개인정보 처리방침에 대해 알아보세요</span>
             </div>
           </div>
