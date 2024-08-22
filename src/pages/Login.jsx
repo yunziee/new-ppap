@@ -10,6 +10,9 @@ const Login = () => {
   const [password, setPassword] = useState("");
   const [rememberId, setRememberId] = useState(false);
 
+  // const mockId = "qwerty1234";
+  // const mockPwd = "1234qwer!";
+
   const handleUsernameChange = useCallback((e) => {
     setUsername(e.target.value);
   }, []);
@@ -54,8 +57,8 @@ const Login = () => {
           className="button-primary"
         />
         <div className="login-options">
-          {/* <a href="/find-id">아이디 찾기</a> |{" "}
-          <a href="/find-password">비밀번호 찾기</a> |{" "} */}
+          <a href="/find-id">아이디 찾기</a> |{" "}
+          <a href="/find-password">비밀번호 찾기</a> |{" "}
           <a href="/signup">회원 가입</a>
         </div>
       </div>
