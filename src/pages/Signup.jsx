@@ -42,7 +42,7 @@ const Signup = () => {
 
     const idExp = /^[a-zA-Z0-9]{4,12}$/;
     if (!idExp.test(formData.id)) {
-      newError.id = "4-12 길이의 영문자 혹은 숫자만 입력해 주세요.";
+      newError.id = "4-12 길이의 영문자와 숫자만 입력해 주세요.";
       valid = false;
     }
 

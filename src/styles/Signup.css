@@ -22,6 +22,13 @@
     font-family: "pretendard-regular";
 }
 
+.Signup .form-group > p {
+    font-family: "pretendard-light";
+    color: rgb(255, 0, 60);
+    margin-top: 0px;
+    margin-bottom: 25px;
+}
+
 .Signup .check-group {
     font-family: "pretendard-regular";
     margin-bottom: 20px;
