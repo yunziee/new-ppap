@@ -1,7 +1,7 @@
 import { useState } from "react";
 import "../styles/Sidebar.css";
 
-const Sidebar = ({ children, title }) => {
+const Sidebar = ({ children }) => {
   const [isOpen, setIsOpen] = useState(true);
 
   const toggleSidebar = () => {
@@ -13,12 +13,7 @@ const Sidebar = ({ children, title }) => {
       <button className="toggle-button" onClick={toggleSidebar}>
         {isOpen ? "≪" : "≫"}
       </button>
-      {isOpen && (
-        <div className="sidebar-content">
-          <h2>{title}</h2>
-          {children}
-        </div>
-      )}
+      {isOpen && <div className="sidebar-content">{children}</div>}
     </div>
   );
 };
