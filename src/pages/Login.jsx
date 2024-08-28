@@ -1,4 +1,5 @@
 import React, { useState, useCallback } from "react";
+import axios from "axios"; // Axios import
 import Button from "../components/Button";
 import InputField from "../components/InputField";
 import Checkbox from "../components/Checkbox";
@@ -9,9 +10,7 @@ const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [rememberId, setRememberId] = useState(false);
-
-  // const mockId = "qwerty1234";
-  // const mockPwd = "1234qwer!";
+  const [error, setError] = useState(""); // 에러 메시지를 위한 상태
 
   const handleUsernameChange = useCallback((e) => {
     setUsername(e.target.value);
@@ -25,9 +24,28 @@ const Login = () => {
     setRememberId(e.target.checked);
   }, []);
 
-  const handleLogin = useCallback(() => {
-    console.log("Logging in", { username, password, rememberId });
-  }, [username, password, rememberId]);
+  const handleLogin = useCallback(async () => {
+    try {
+      const response = await axios.post("http://localhost:5173/login", {
+        username,
+        password,
+      });
+
+      // 로그인 성공 시 처리 (예: 토큰 저장, 리다이렉트 등)
+      if (response.status === 200) {
+        console.log("Login successful", response.data);
+        // 예를 들어, JWT 토큰을 로컬 스토리지에 저장
+        localStorage.setItem("token", response.data.token);
+
+        // 사용자 리다이렉션
+        window.location.href = "http://localhost:5173/chat";
+      }
+    } catch (error) {
+      // 로그인 실패 시 에러 처리
+      console.error("Login failed", error);
+      setError("아이디와 비밀번호를 확인하세요.");
+    }
+  }, [username, password]);
 
   return (
     <div className="login-container">
@@ -56,6 +74,7 @@ const Login = () => {
           onClick={handleLogin}
           className="button-primary"
         />
+        {error && <div className="error-message">{error}</div>}
         <div className="login-options">
           <a href="/find-id">아이디 찾기</a> |{" "}
           <a href="/find-password">비밀번호 찾기</a> |{" "}

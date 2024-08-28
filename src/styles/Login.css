@@ -30,4 +30,12 @@
   .login-options a:hover {
     text-decoration: underline;
   }
+
+
+.error-message {
+  color: red;
+  font-family: "pretendard-regular";
+  margin-top: 10px;
+  text-align: center;
+}
   

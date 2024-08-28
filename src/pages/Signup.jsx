@@ -1,13 +1,11 @@
 import React, { useState, useCallback } from "react";
+import axios from "axios";
 import Header2 from "../components/Header2";
 import "../styles/Signup.css";
 import InputField from "../components/InputField";
 import Button from "../components/Button";
-import { useNavigate } from "react-router-dom";
 
 const Signup = () => {
-  const nav = useNavigate();
-
   // 초기 값 세팅
   const [formData, setFormData] = useState({
     id: "",
@@ -69,15 +67,44 @@ const Signup = () => {
   }, [formData]);
 
   const handleSubmit = useCallback(
-    (e) => {
+    async (e) => {
       e.preventDefault();
+      setSuccess(""); // 성공 메시지 초기화
+      setError({ id: "", password: "", confirmPassword: "", email: "" }); // 에러 메시지 초기화
       if (validate()) {
-        setSuccess("회원 가입에 성공했습니다!");
-        // 서버에 회원가입 요청 로직은 여기에 추가됩니다.
-        nav("/login"); // 성공 시 로그인 페이지로 이동
+        try {
+          // Axios 요청
+          const response = await axios.post(
+            "http://localhost:5173/signup",
+            formData
+          );
+
+          if (response.status === 200) {
+            setSuccess("회원 가입에 성공했습니다!");
+            setFormData({
+              id: "",
+              password: "",
+              confirmPassword: "",
+              name: "",
+              email: "",
+              userType: "personal",
+            });
+            window.location.href = "http://localhost:5173/login";
+          }
+        } catch (err) {
+          if (err.response && err.response.data) {
+            setError((prevError) => ({
+              ...prevError,
+              ...err.response.data.errors, // 서버에서 전송된 에러 메시지 반영
+            }));
+          } else {
+            // 팝업으로 에러 메시지 표시
+            alert("회원 가입에 실패했습니다. 다시 시도해 주세요.");
+          }
+        }
       }
     },
-    [validate, nav]
+    [formData, validate]
   );
 
   return (
