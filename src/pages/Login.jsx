@@ -26,7 +26,7 @@ const Login = () => {
 
   const handleLogin = useCallback(async () => {
     try {
-      const response = await axios.post("http://15.165.54.60:8000/login", {
+      const response = await axios.post("/login", {
         username,
         password,
       });
