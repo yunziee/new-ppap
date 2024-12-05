@@ -26,7 +26,7 @@ const Chat = () => {
       ]);
 
       try {
-        const response = await axios.post("http://15.165.54.60/api/ask", {
+        const response = await axios.post("http://15.165.54.60/chat/api/ask", {
           query: message,
           policy_file_path: policyFilePath,
           guideline_file_path: guidelineFilePath,
@@ -73,8 +73,8 @@ const Chat = () => {
         try {
           const response = await axios.post(
             fileType === "policy"
-              ? "http://15.165.54.60:8000/upload-policy"
-              : "http://15.165.54.60:8000/upload-guideline",
+              ? "http://15.165.54.60:8000/chat/api/upload-policy"
+              : "http://15.165.54.60:8000/chat/api/upload-policy",
             formData,
             { headers: { "Content-Type": "multipart/form-data" } }
           );
