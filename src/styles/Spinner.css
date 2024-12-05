@@ -1,0 +1,31 @@
+.spinner {
+  position: fixed;
+  bottom: 20px;  /* 하단에서 20px 만큼 띄움 */
+  left: 50%;
+  transform: translateX(-50%); /* 수평 가운데 정렬 */
+  width: 70px;
+  text-align: center;
+  z-index: 9999; /* 다른 요소 위에 표시되도록 설정 */
+}
+
+.spinner > div {
+  width: 18px;
+  height: 18px;
+  background-color: #333;
+  border-radius: 100%;
+  display: inline-block;
+  animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+}
+
+.spinner .bounce1 {
+  animation-delay: -0.32s;
+}
+
+.spinner .bounce2 {
+  animation-delay: -0.16s;
+}
+
+@keyframes sk-bouncedelay {
+  0%, 80%, 100% { transform: scale(0); }
+  40% { transform: scale(1); }
+}

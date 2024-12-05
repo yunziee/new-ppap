@@ -1,18 +1,33 @@
-import React, { useEffect, useRef } from "react";
+import React, { useRef, useState, useEffect } from "react";
+import ReactMarkdown from "react-markdown";
 import "../styles/ChatWindow.css";
 import user from "./../assets/icons/userIcon.png";
 import system from "./../assets/icons/robotEmoji.png";
 
 const ChatWindow = ({ messages }) => {
   const chatContainerRef = useRef(null);
+  const [copied, setCopied] = useState(false);
+
+  const handleCopy = (text) => {
+    navigator.clipboard.writeText(text);
+    setCopied(true);
+  };
 
   useEffect(() => {
-    // 메시지가 추가될 때마다 스크롤을 최하단으로 이동
+    if (copied) {
+      const timer = setTimeout(() => {
+        setCopied(false);
+      }, 1000);
+      return () => clearTimeout(timer);
+    }
+  }, [copied]);
+
+  useEffect(() => {
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTop =
         chatContainerRef.current.scrollHeight;
     }
-  }, [messages]); // messages가 변경될 때마다 실행
+  }, [messages]);
 
   return (
     <div className="chat-window" ref={chatContainerRef}>
@@ -25,7 +40,16 @@ const ChatWindow = ({ messages }) => {
                 alt={`${msg.sender} icon`}
                 className="message-icon"
               />
-              <span>{msg.text}</span>
+              {msg.sender === "system" ? (
+                <div>
+                  <ReactMarkdown>{msg.text}</ReactMarkdown>
+                  <button onClick={() => handleCopy(msg.text)}>
+                    {copied ? "복사됨!" : "복사"}
+                  </button>
+                </div>
+              ) : (
+                <span>{msg.text}</span>
+              )}
             </div>
           </div>
         ))}

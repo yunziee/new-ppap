@@ -1,58 +1,61 @@
 .chat-window {
-    flex: 1;
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    overflow-y: auto;
-    box-sizing: content-box;
-    font-family: 'pretendard-regular';
-    border:none;
-    height: calc(100vh - 150px); /* 입력창을 고려한 높이 설정 */
-    max-height: calc(100vh - 50px); /* 최대 높이 설정 */
-  }
+  height: 500px; /* 높이 설정 */
+  overflow-y: auto; /* 스크롤 추가 */
+  padding: 20px;
+  background-color: #f5f5f5; /* 배경색 설정 */
+}
 
-  .chat-window::-webkit-scrollbar{
-    display: none;
-  }
-  .message-list {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .message-bubble {
-    display: flex;
-    align-items: center;
-    margin: 10px;
-    padding: 20px;
-    border-radius: 15px;
-    max-width: 70%;
-    font-size: 16px;
-  }
-  
-  .message-bubble.user {
-    background-color: rgb(240, 240, 240);
-    color: black;
-    align-self:center;
-    width: 100%;
-    
-  }
-  
-  .message-bubble.system {
-    color: black;
-    align-self: center;
-    margin-right: auto;
-    margin: 10px;
-  }
-  
-  .message-content {
-    display: flex;
-    align-items: center;
-    max-width: 100%;
-    word-wrap: break-word;
-  }
-  
-  .message-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 10px;
-  }
+.message-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.message-bubble {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: flex-start; /* 왼쪽 정렬 */
+  align-items: center;
+}
+
+.message-bubble.user {
+  justify-content: flex-end; /* 오른쪽 정렬 */
+}
+
+.message-content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column; /* 세로 배치 */
+  align-items: flex-start; /* 왼쪽 상단 정렬 */
+  background-color: #fff; /* 말풍선 배경색 */
+  padding: 10px 15px;
+  border-radius: 20px; /* 둥근 모서리 */
+  gap: 5px;
+  max-width: 80%;
+  word-break: break-all; /* 또는 break-word */
+  overflow-wrap: break-word;
+  white-space: pre-wrap;
+}
+
+.message-bubble.user .message-content {
+  background-color: #dcf8c6; /* 사용자 말풍선 배경색 */
+}
+
+.message-icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 10px;
+}
+
+.message-bubble.user .message-icon {
+  margin-right: 0;
+  margin-left: 10px;
+}
+
+.message-content button {
+  background-color: #eee; /* 버튼 배경색 */
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-left: 10px;
+  cursor: pointer;
+}
