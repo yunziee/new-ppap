@@ -74,7 +74,7 @@ const Chat = () => {
           const response = await axios.post(
             fileType === "policy"
               ? "http://15.165.54.60:8000/chat/api/upload-policy"
-              : "http://15.165.54.60:8000/chat/api/upload-policy",
+              : "http://15.165.54.60:8000/chat/api/upload-guideline",
             formData,
             { headers: { "Content-Type": "multipart/form-data" } }
           );
