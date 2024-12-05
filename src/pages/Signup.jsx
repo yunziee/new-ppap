@@ -75,7 +75,7 @@ const Signup = () => {
         try {
           // Axios 요청
           const response = await axios.post(
-            "http://localhost:5173/signup",
+            "http://15.165.54.60/api/signup",
             formData
           );
 
