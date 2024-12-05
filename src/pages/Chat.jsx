@@ -26,7 +26,7 @@ const Chat = () => {
       ]);
 
       try {
-        const response = await axios.post("http://localhost:8000/ask", {
+        const response = await axios.post("http://15.165.54.60:8000/ask", {
           query: message,
           policy_file_path: policyFilePath,
           guideline_file_path: guidelineFilePath,
