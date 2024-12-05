@@ -75,7 +75,7 @@ const Signup = () => {
         try {
           // Axios 요청
           const response = await axios.post(
-            "http://15.165.54.60/api/signup",
+            "http://15.165.54.60/chat/api/signup",
             formData
           );
 
