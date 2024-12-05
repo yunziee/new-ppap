@@ -38,7 +38,7 @@ const Login = () => {
         localStorage.setItem("token", response.data.token);
 
         // 사용자 리다이렉션
-        window.location.href = "http://localhost:5173/chat";
+        window.location.href = "http://15.165.54.60/api/chat";
       }
     } catch (error) {
       // 로그인 실패 시 에러 처리
