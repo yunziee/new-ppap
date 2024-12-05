@@ -89,7 +89,7 @@ const Signup = () => {
               email: "",
               userType: "personal",
             });
-            window.location.href = "http://15.165.54.60:8000/login";
+            window.location.href = "/login";
           }
         } catch (err) {
           if (err.response && err.response.data) {
