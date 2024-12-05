@@ -3,8 +3,8 @@
     align-items: center;
     padding: 20px;
     position: relative; /* 이미지를 절대 위치로 배치하기 위해 relative 설정 */
-    width: calc(100% - 40px); /* 입력창의 너비를 화면 크기에 맞춤 */
-    margin: 10px auto; /* 가운데 정렬 */
+    width: 110%; /* 입력창의 너비를 화면 크기에 맞춤 */
+
 }
 
 .chat-input input {
